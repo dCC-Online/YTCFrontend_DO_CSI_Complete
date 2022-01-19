@@ -1,0 +1,131 @@
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.Header-Gradient{
+  /* background: rgb(70,252,213);
+  background: radial-gradient(circle, rgba(70, 252, 213, 0.404) 5%, rgba(39,44,52,1) 99%); */
+  border: 5px solid #529beb;
+  -webkit-box-shadow:-0px 0px 60px 18px #346d67 ;
+-moz-box-shadow:-0px 0px 60px 18px #346d67 ;
+box-shadow:-0px 0px 60px 18px #346d67 ; 
+background-color:black;
+color: white;
+
+/* -webkit-box-shadow:-0px 0px 60px 18px #346d67 inset;
+-moz-box-shadow:-0px 0px 60px 18px #346d67 inset;
+box-shadow:-0px 0px 60px 18px #346d67 inset; */
+
+}
+.Comment-Box{
+  -webkit-box-shadow:0px 0px 77px 19px #000000 inset,0px 0px 100px 100px #bb3373 inset;
+-moz-box-shadow:0px 0px 77px 19px #000000 inset,0px 0px 100px 100px #bb3373 inset;
+box-shadow:0px 0px 77px 19px #000000 inset,0px 0px 100px 100px #bb3373 inset;
+}
+.Search-Box-Gradient{
+  background:-webkit-linear-gradient(0deg, rgb(39, 44, 52) 36%, rgb(0, 0, 0) 100%);
+background:-o-linear-gradient(0deg, rgb(39, 44, 52) 36%, rgb(0, 0, 0) 100%);
+background:-moz-linear-gradient(0deg, rgb(39, 44, 52) 36%, rgb(0, 0, 0) 100%);
+background:linear-gradient(0deg, rgb(39, 44, 52) 36%, rgb(0, 0, 0) 100%);
+}
+.Comment-Text{
+  margin-left: 15px; 
+  font-size: 20px;
+  color:#0ba198;
+  text-shadow:0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5), 2px 2px 4px #CE0DA9;
+}
+.Rotateimg180 {
+  -webkit-transform:rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.cool-font{
+  color:rgb(9, 243, 36);
+  text-shadow:0 0 15px rgb(169, 9, 9), 0 0 10px rgb(255, 255, 255), 2px 2px 4px #CE0DA9;
+
+}
+.Name-Box{
+  font-family: "Arial Black", Gadget, sans-serif;
+font-size: 25px;
+letter-spacing: -2.4px;
+word-spacing: -1.2px;
+color: black;
+text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5), 2px 2px 4px #CE0DA9;
+font-weight: 400;
+text-decoration: none solid rgb(68, 68, 68);
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+  /* border:5px outset #186975;
+  -webkit-box-shadow:0px 0px 51px 0px #000000 inset,0px 0px 100px 100px #04c1a9 inset;
+  -moz-box-shadow:0px 0px 51px 0px #000000 inset,0px 0px 100px 100px #04c1a9 inset;
+  box-shadow:0px 0px 51px 0px #000000 inset,0px 0px 100px 100px #04c1a9 inset; */
+  /* background:-webkit-linear-gradient(90deg, rgb(231, 76, 255) 0%, rgb(119, 255, 119) 80%);
+background:-o-linear-gradient(90deg, rgb(231, 76, 255) 0%, rgb(119, 255, 119) 80%);
+background:-moz-linear-gradient(90deg, rgb(231, 76, 255) 0%, rgb(119, 255, 119) 80%);
+background:linear-gradient(90deg, rgb(231, 76, 255) 0%, rgb(119, 255, 119) 80%); */
+margin: 5px;
+}
+.Hover-Cursor:hover{
+  cursor: pointer;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.Gradient-Box-Shadow{
+  color: #87cefa;
+  text-shadow:0px 5px 10px #ff00b3a9,4px -3px 30px #92e9f4;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.button {
+    outline: 0;
+    position: relative;
+    display: inline-block;
+    padding: 10px 40px;
+    font-size: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #529ae8;
+    background: #529ae8;
+    color: #fff;
+    font-weight: 500;
+    transition: box-shadow 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
+.button:hover {
+    background-color: #4b00ff;
+    color: #fff;
+    box-shadow: 0 0 5px #4b00ff,
+                0 0 20px rgb(75 0 255 / 0.8),
+                0 0 35px rgb(75 0 255 / 0.7),
+                0 0 50px rgb(75 0 255 / 0.6);
+    border-color: #fff;
+} 

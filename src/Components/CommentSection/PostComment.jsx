@@ -1,0 +1,38 @@
+
+import axios from "axios";
+import React from "react";
+import { useState } from "react";
+import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import "../../App.css"
+
+
+const PostComment = (props) => {
+    const [comment, setCommnet] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        let postComment = {
+            "video_id": props.video_id,
+            "text": comment,
+        }
+        let response2 = await axios.post("http://127.0.0.1:8000/api/comments/", postComment, { headers: { Authorization: "Bearer " + localStorage.getItem('token') } });
+    }
+
+    return (
+        <Container className='Header-Gradient'>
+            {!localStorage.getItem('token') ? <div className="Name-Box">You must sign in or register to post comments</div> :
+                <form onSubmit={handleSubmit}>
+                    <Row>
+                        <Col>
+                            <label className='Name-Box' >Comment: </label>
+                            <Form.Control as="textarea" onChange={(e) => setCommnet(e.target.value)}></Form.Control>
+                        </Col>
+                    </Row>
+                    <Button variant="primary" type="submit">Post</Button>
+                </form>
+            }
+        </Container>
+    )
+}
+
+export default PostComment;
