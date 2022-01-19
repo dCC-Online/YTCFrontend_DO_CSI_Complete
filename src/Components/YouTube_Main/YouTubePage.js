@@ -20,6 +20,9 @@ const YouTubePage = (props) => {
 
     useEffect(() => {
         getHomePageVideos();
+    }, [])
+    useEffect(() => {
+      
     }, [rerender])
 
     const getHomePageVideos = async () => {

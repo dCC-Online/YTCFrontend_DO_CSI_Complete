@@ -15,7 +15,8 @@ const PostComment = (props) => {
             "video_id": props.video_id,
             "text": comment,
         }
-        let response2 = await axios.post("http://127.0.0.1:8000/api/comments/", postComment, { headers: { Authorization: "Bearer " + localStorage.getItem('token') } });
+        await axios.post("http://127.0.0.1:8000/api/comments/", postComment, { headers: { Authorization: "Bearer " + localStorage.getItem('token') } });
+        props.getComments()
     }
 
     return (

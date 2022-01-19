@@ -18,7 +18,7 @@ const VideoList = (props) =>{
     return(
         <Container>
                 {(relatedVideos.map((el,i)=>{
-                    if(el.snippet != undefined){
+                    if(el.snippet !== undefined){
                     return(
                         <Row key={i} className="Hover-Cursor Header-Gradient" onClick={()=>props.handleVideo(el)}>
                             <Col style={{fontSize : '20px', backgroundColor:'black'}}>{el.snippet.title}</Col>

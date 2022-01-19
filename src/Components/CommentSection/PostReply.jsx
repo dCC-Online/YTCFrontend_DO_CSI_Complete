@@ -15,7 +15,7 @@ const PostReply = (props) => {
             "text": reply,
         }
         let response2 = await axios.post(`http://127.0.0.1:8000/api/comments/${props.commentId}/replies/`, postComment, { headers: { Authorization: "Bearer " + localStorage.getItem('token') } });
-        console.log(response2.data)
+        props.rerender()
     }
 
     return (

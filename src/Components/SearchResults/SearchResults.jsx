@@ -12,7 +12,7 @@ const SearchResults = (props) => {
                   
                      
                             <Col key={i} xs ={5} className="Header-Gradient rounded" style={{margin: "20px", cursor:"pointer"}} onClick={()=>props.handleVideo(el)}>
-                                <img style={{objectFit:"cover", maxWidth: "100%"}} src={el.snippet.thumbnails.high.url}></img>
+                                <img alt="" style={{objectFit:"cover", maxWidth: "100%"}} src={el.snippet.thumbnails.high.url}></img>
                                 <div style ={{overflowWrap: 'break-word'}}>{el.snippet.title}</div>
                             </Col>
                   

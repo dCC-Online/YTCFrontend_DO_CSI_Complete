@@ -9,6 +9,7 @@ import PostComment from './PostComment';
 
 const CommentSection = (props) => {
     const [videoComments, setComments] = useState([])
+
     const getComments = async () => {
         let response = await axios.get(`http://127.0.0.1:8000/api/comments/${props.videoId}/`)
         setComments(response.data)
@@ -16,7 +17,7 @@ const CommentSection = (props) => {
     }
     const likeComment = async (comment) => {
         let userJWT = localStorage.getItem("token")
-        if (userJWT != undefined) {
+        if (userJWT !== undefined) {
             comment.likes++;
             let response = await axios.put(`http://127.0.0.1:8000/api/comments/${comment.id}/update/`, comment, { headers: { Authorization: "Bearer " + userJWT } })
             getComments()
@@ -28,7 +29,7 @@ const CommentSection = (props) => {
     }
     const dislikeComment = async (comment) => {
         let userJWT = localStorage.getItem("token")
-        if (userJWT != undefined) {
+        if (userJWT !== undefined) {
             comment.dislikes++;
             let response = await axios.put(`http://127.0.0.1:8000/api/comments/${comment.id}/update/`, comment, { headers: { Authorization: "Bearer " + userJWT } })
             getComments()
@@ -42,16 +43,16 @@ const CommentSection = (props) => {
     }, [])
     return (
         <>
-            <PostComment video_id={props.videoId}></PostComment>
+            <PostComment getComments ={getComments} video_id={props.videoId}></PostComment>
             <br></br>
             <Container className='Header-Gradient' style={{ marginLeft: '0px' }} >
-                {videoComments.map((el) => {
+                {videoComments.reverse().map((el) => {
                     return (
                         <Row>
-                            <Comment key={el.id} comment={el} />
+                            <Comment key={el.id} comment={el} getComments={getComments} />
                             <Col xs={{ span: 3, offset: 1 }}>
-                                <img onClick={() => likeComment(el)} style={{ width: '50px', margin: '30px', height: '50px', cursor: "pointer" }} src={thumbsUp}></img>
-                                <img onClick={() => dislikeComment(el)} className='Rotateimg180' style={{ width: '50px', margin: '10px', height: '50px', cursor: "pointer" }} src={thumbsUp}></img>
+                                <img alt="" onClick={() => likeComment(el)} style={{ width: '50px', margin: '30px', height: '50px', cursor: "pointer" }} src={thumbsUp}></img>
+                                <img alt="" onClick={() => dislikeComment(el)} className='Rotateimg180' style={{ width: '50px', margin: '10px', height: '50px', cursor: "pointer" }} src={thumbsUp}></img>
                             </Col>
                         </Row>
                     )
