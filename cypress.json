@@ -1,0 +1,10 @@
+{
+    "nodeVersion": "bundled",
+    "baseUrl": "http://localhost:3000/",
+    "viewportHeight": "1080",
+    "viewportWidth": "1920",
+    "ignoreTestFiles": [
+        "**/1-getting-started/*",
+        "**/2-advanced-examples/*"
+    ]
+}
