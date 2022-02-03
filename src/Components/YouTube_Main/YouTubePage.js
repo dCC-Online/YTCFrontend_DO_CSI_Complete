@@ -16,13 +16,13 @@ const YouTubePage = (props) => {
     const [videoSelected, setVideoSelected] = useState(false);
     const [searchResults, setSearchResults] = useState([]);
 
-    const [rerender, setRerender] = useState(false); 
+    const [rerender, setRerender] = useState(false);
 
     useEffect(() => {
         getHomePageVideos();
     }, [])
     useEffect(() => {
-      
+
     }, [rerender])
 
     const getHomePageVideos = async () => {
@@ -69,16 +69,16 @@ const YouTubePage = (props) => {
     return (
         <div>
             <HeadElement home={setVideoSelected} router={changeRoute}></HeadElement>
-            {router == "Home" ?
+            {router === "Home" ?
                 <>
                     <SearchBar search={searchForVideos}></SearchBar>
                     {!videoSelected ?
                         <SearchResults handleVideo={changeCurrentVideo} searchResults={searchResults}></SearchResults> :
                         <VideoPage handleVideo={changeCurrentVideo} video={currentVideo}></VideoPage>
                     }
-                  
+
                 </>
-                : router == "Register" ?
+                : router === "Register" ?
                     <Register router={changeRoute} />
                     : <Login router={changeRoute} />}
         </div>
