@@ -4,6 +4,7 @@ services:
 
   ytc-web-prod:
     container_name: ytc-frontend-prod-web
+    image: cashmyers/ytc-frontend-prod
     build:
       context: .
       dockerfile: Dockerfile
