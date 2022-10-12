@@ -5,14 +5,13 @@ import Comment from "./Comment"
 import { Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
 import PostComment from './PostComment';
-
-// const URL_HOST = process.env.HOST || 'localhost';
+import { URL_HOST } from '../../urlHost';
 
 const CommentSection = (props) => {
     const [videoComments, setComments] = useState([])
 
     const getComments = async () => {
-        let response = await axios.get(`http://127.0.0.1:8000/api/comments/${props.videoId}/`)
+        let response = await axios.get(`${URL_HOST}/api/comments/${props.videoId}/`)
         setComments(response.data)
 
     }
@@ -20,7 +19,7 @@ const CommentSection = (props) => {
         let userJWT = localStorage.getItem("token")
         if (userJWT !== undefined) {
             comment.likes++;
-            let response = await axios.put(`http://127.0.0.1:8000/api/comments/${comment.id}/update/`, comment, { headers: { Authorization: "Bearer " + userJWT } })
+            let response = await axios.put(`${URL_HOST}/api/comments/${comment.id}/update/`, comment, { headers: { Authorization: "Bearer " + userJWT } })
             getComments()
         }
         else {
@@ -32,7 +31,7 @@ const CommentSection = (props) => {
         let userJWT = localStorage.getItem("token")
         if (userJWT !== undefined) {
             comment.dislikes++;
-            let response = await axios.put(`http://127.0.0.1:8000/api/comments/${comment.id}/update/`, comment, { headers: { Authorization: "Bearer " + userJWT } })
+            let response = await axios.put(`${URL_HOST}/api/comments/${comment.id}/update/`, comment, { headers: { Authorization: "Bearer " + userJWT } })
             getComments()
         }
         else {

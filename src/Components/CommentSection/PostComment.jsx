@@ -4,8 +4,7 @@ import React from "react";
 import { useState } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import "../../App.css"
-
-// const URL_HOST = process.env.HOST || 'localhost';
+import { URL_HOST } from "../../urlHost";
 
 const PostComment = (props) => {
     const [comment, setCommnet] = useState("");
@@ -16,7 +15,7 @@ const PostComment = (props) => {
             "video_id": props.video_id,
             "text": comment,
         }
-        await axios.post("http://127.0.0.1:8000/api/comments/", postComment, { headers: { Authorization: "Bearer " + localStorage.getItem('token') } });
+        await axios.post(`${URL_HOST}/api/comments/`, postComment, { headers: { Authorization: "Bearer " + localStorage.getItem('token') } });
         props.getComments()
     }
 

@@ -7,12 +7,7 @@ import CurrentVideo from './CurrentVideo';
 import VideoList from './VideoList';
 import SearchBar from './SearchBar';
 import CommentSection from './CommentSection/CommentSection';
-
-
-
-// const URL_HOST = (process.env.NODE_ENV === 'production') 
-//     ? 'https://98.46.83.1:8000'
-//     : 'https://127.0.0.1:8000';
+import { URL_HOST } from '../urlHost';
 
 class YouTubePage extends Component{
     constructor(props){
@@ -31,8 +26,7 @@ class YouTubePage extends Component{
     }
 
     getComments=()=>{
-        // axios.get(`${URL_HOST}/api/comments/${this.state.currentVidId}`)
-        axios.get(`http://127.0.0.1:8000/api/comments/${this.state.currentVidId}`)
+        axios.get(`${URL_HOST}/api/comments/${this.state.currentVidId}`)
         .then(result=>{
             console.log(result);
         })

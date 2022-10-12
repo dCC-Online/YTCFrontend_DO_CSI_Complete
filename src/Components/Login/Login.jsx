@@ -3,8 +3,7 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-
-// const URL_HOST = process.env.HOST || 'localhost';
+import { URL_HOST } from "../../urlHost";
 
 const Login = (props) => {
     const [username, setUsername] = useState("");
@@ -16,7 +15,7 @@ const Login = (props) => {
             "username": username,
             "password": password,
         }
-        let response2 = await axios.post("http://127.0.0.1:8000/api/auth/login/", user);
+        let response2 = await axios.post(`${URL_HOST}/api/auth/login/`, user);
         console.log("JWT", response2.data.access)
         localStorage.setItem("token", response2.data.access)
         props.router("Home")

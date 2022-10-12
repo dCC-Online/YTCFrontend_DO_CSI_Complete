@@ -4,8 +4,7 @@ import React from "react";
 import { useState } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import "../../App.css"
-
-// const URL_HOST = process.env.HOST || 'localhost';
+import { URL_HOST } from "../../urlHost";
 
 const PostReply = (props) => {
     const [reply, setReply] = useState("");
@@ -15,7 +14,7 @@ const PostReply = (props) => {
         let postComment = {
             "text": reply,
         }
-        let response2 = await axios.post(`http://127.0.0.1:8000/api/comments/${props.commentId}/replies/`, postComment, { headers: { Authorization: "Bearer " + localStorage.getItem('token') } });
+        let response2 = await axios.post(`${URL_HOST}/api/comments/${props.commentId}/replies/`, postComment, { headers: { Authorization: "Bearer " + localStorage.getItem('token') } });
         props.rerender()
     }
 

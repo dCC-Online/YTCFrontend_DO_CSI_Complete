@@ -3,15 +3,14 @@ import '../../App.css';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import PostReply from './PostReply';
-
-// const URL_HOST = process.env.HOST || '127.0.0.1';
+import { URL_HOST } from '../../urlHost';
 
 const Comment =(props)=>{
     const [replies, setReplies] = useState([]);
     const [replyBox, setReplyBox] = useState(false);
     const [triggerReplies, setTriggerReplies] = useState(false)
     const getReplies = async() =>{
-        let response = await axios.get(`http://127.0.0.1:8000/api/comments/${props.comment.id}/replies/`, {headers:{Authorization: "Bearer " +localStorage.getItem("token")}});
+        let response = await axios.get(`${URL_HOST}/api/comments/${props.comment.id}/replies/`, {headers:{Authorization: "Bearer " +localStorage.getItem("token")}});
         console.log(response.data)
         setReplies(response.data);
     }
