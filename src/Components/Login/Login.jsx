@@ -4,6 +4,7 @@ import React from "react";
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
+// const URL_HOST = process.env.HOST || 'localhost';
 
 const Login = (props) => {
     const [username, setUsername] = useState("");

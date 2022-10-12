@@ -9,6 +9,11 @@ import SearchBar from './SearchBar';
 import CommentSection from './CommentSection/CommentSection';
 
 
+
+// const URL_HOST = (process.env.NODE_ENV === 'production') 
+//     ? 'https://98.46.83.1:8000'
+//     : 'https://127.0.0.1:8000';
+
 class YouTubePage extends Component{
     constructor(props){
         super(props);
@@ -24,12 +29,15 @@ class YouTubePage extends Component{
             }]
         };
     }
+
     getComments=()=>{
-        axios.get(`https://localhost:44358/api/comments/${this.state.currentVidId}`)
+        // axios.get(`${URL_HOST}/api/comments/${this.state.currentVidId}`)
+        axios.get(`http://127.0.0.1:8000/api/comments/${this.state.currentVidId}`)
         .then(result=>{
             console.log(result);
         })
     }
+
     getVideos=()=>{
         axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${this.state.searchTerm}&type=video&key=AIzaSyAx573_FpemBH0d0_8kez-YxzHrxlmofAI`)
         .then(response=>{

@@ -4,6 +4,8 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import PostReply from './PostReply';
 
+// const URL_HOST = process.env.HOST || '127.0.0.1';
+
 const Comment =(props)=>{
     const [replies, setReplies] = useState([]);
     const [replyBox, setReplyBox] = useState(false);

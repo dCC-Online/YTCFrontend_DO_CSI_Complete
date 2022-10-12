@@ -6,6 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
 import PostComment from './PostComment';
 
+// const URL_HOST = process.env.HOST || 'localhost';
 
 const CommentSection = (props) => {
     const [videoComments, setComments] = useState([])

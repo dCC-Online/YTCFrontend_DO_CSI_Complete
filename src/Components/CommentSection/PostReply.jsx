@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import "../../App.css"
 
+// const URL_HOST = process.env.HOST || 'localhost';
 
 const PostReply = (props) => {
     const [reply, setReply] = useState("");
