@@ -2,11 +2,16 @@ version: "3.9"
 
 services:
 
-  ytc-web-prod:
-    container_name: ytc-frontend-prod-web
-    image: cashmyers/ytc-frontend-prod
-    build:
-      context: .
-      dockerfile: Dockerfile
+  nginx:
+    container_name: ytc-nginx
+    image: cashmyers/ytc-nginx
     ports:
-      - "3000:3000"
+      - 80:80
+    depends_on:
+      - ytc-web-fs
+
+  ytc-web-fs:
+    container_name: ytc-frontend-fs
+    image: cashmyers/ytc-frontend-prod
+    ports:
+      - 3000:80
