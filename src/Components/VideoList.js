@@ -22,7 +22,7 @@ const VideoList = (props) =>{
                     return(
                         <Row key={i} className="Hover-Cursor Header-Gradient" onClick={()=>props.handleVideo(el)}>
                             <Col style={{fontSize : '20px', backgroundColor:'black'}}>{el.snippet.title}</Col>
-                            <img src={el.snippet.thumbnails.default.url}></img>
+                            <img src={el.snippet.thumbnails.default.url} style={{width: "140px"}} ></img>
                         </Row>
                     );
                     }

@@ -15,6 +15,7 @@ const Login = (props) => {
             "username": username,
             "password": password,
         }
+        console.log("Host is: ", URL_HOST)
         let response2 = await axios.post(`${URL_HOST}/api/auth/login/`, user);
         console.log("JWT", response2.data.access)
         localStorage.setItem("token", response2.data.access)

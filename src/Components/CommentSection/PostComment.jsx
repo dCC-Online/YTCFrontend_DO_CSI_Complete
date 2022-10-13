@@ -21,8 +21,9 @@ const PostComment = (props) => {
 
     return (
         <Container className='Header-Gradient'>
-            {!localStorage.getItem('token') ? <div className="Name-Box">You must sign in or register to post comments</div> :
-                <form onSubmit={handleSubmit}>
+            {!localStorage.getItem('token')
+                ? <div className="Name-Box">You must sign in or register to post comments</div>
+                : <form onSubmit={handleSubmit}>
                     <Row>
                         <Col>
                             <label className='Name-Box' >Comment: </label>
